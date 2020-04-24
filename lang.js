@@ -122,8 +122,12 @@ function languageSettings(region, country){
 			jQuery("[id$='1~label']").html(dict["PasswordText"]);
 			
 		}
+		else if (jQuery("#Password").length !=0){
+			jQuery(".LanguageSelectorContainer").show();
+		}
 		else {
 			languageSelector(region, country);
 		}
 	});
 };
+
