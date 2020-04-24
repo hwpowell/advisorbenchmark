@@ -118,8 +118,8 @@ function languageSettings(region, country){
 		if (jQuery("[id^=Authenticator]").length !=0){
 			jQuery(".LanguageSelectorContainer").show();
 			var dict = translations(jQuery('#Q_lang').val());
-			jQuery("[id$=0~label]").html(dict[EmailText]);
-			jQuery("[id$=1~label]").html(dict[PasswordText]);
+			jQuery("[id$=0~label]").html(dict["EmailText"]);
+			jQuery("[id$=1~label]").html(dict["PasswordText"]);
 			
 		}
 		else {
@@ -127,3 +127,5 @@ function languageSettings(region, country){
 		}
 	});
 };
+
+
