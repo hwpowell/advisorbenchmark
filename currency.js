@@ -20,7 +20,7 @@ function formatInputTextGenerator(inputs, positive=false, noDelimiter=false) {
 				noImmediatePrefix: true,
 				numeralDecimalMark: decimalMark,
 				delimiter: delimiter,
-					numeralDecimalScale: 0
+				numeralDecimalScale: 0
 			});
 		});
 	}
