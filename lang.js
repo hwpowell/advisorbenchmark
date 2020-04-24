@@ -58,3 +58,66 @@ function languageSettings(region, country){
 		}
 	});
 };
+
+function translations(language){
+	switch (language){
+		case "DE":
+			var dict = {
+				//Core
+				"EmailText" : "E-Mail-Adresse",
+				"PasswordText" : "Passwort",
+				"Location" : "Location",
+				"Please enter a valid postal code" : "Please enter a valid postal code",
+				"PostError" : " is not a valid postal code",
+				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to:",
+				"LostClientsError" : "Lost clients must equal:",
+				//EX and Comp
+				"ExIntroText" : "Update here",
+				//M&A
+				"Months" : "Months",
+				// All modules
+				"SubmitSurvey" : "SUBMIT SURVEY"
+			};
+			break;
+		
+		case "NL":
+			var dict = {
+				//Core
+				"EmailText" : "E-mailadres",
+				"PasswordText" : "Wachtwoord",
+				"Location" : "Location",
+				"Please enter a valid postal code" : "Please enter a valid postal code",
+				"PostError" : " is not a valid postal code",
+				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to:",
+				"LostClientsError" : "Lost clients must equal:",
+				//EX and Comp
+				"ExIntroText" : "Update here",
+				//M&A
+				"Months" : "Months",
+				// All modules
+				"SubmitSurvey" : "SUBMIT SURVEY"
+			};
+			break;
+		
+		default:
+			var dict = {
+				//Core
+				"EmailText" : "Email",
+				"PasswordText" : "Password",
+				"Location" : "Location",
+				"Please enter a valid postal code" : "Please enter a valid postal code",
+				"PostError" : " is not a valid postal code",
+				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to:",
+				"LostClientsError" : "Lost clients must equal:",
+				//EX and Comp
+				"ExIntroText" : "This survey requires a password.",
+				//M&A
+				"Months" : "Months",
+				// All modules
+				"SubmitSurvey" : "SUBMIT SURVEY"
+			};
+			break;
+	};
+	
+	return dict;
+};
