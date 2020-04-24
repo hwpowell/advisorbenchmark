@@ -1,0 +1,95 @@
+	function formatInputTextGenerator(inputs, positive=false, noDelimiter=false) {
+		return function(){
+			country = '${e://Field/Country}';
+			if (country == "DE"){
+				delimiter = ".";
+				decimalMark = ",";
+			}
+			else {
+				delimiter = ",";
+				decimalMark = ".";
+			}
+			if (noDelimiter == true){
+				delimiter = "";
+			}
+			inputs.each(function(index, value) {
+				new Cleave(this, {
+					numeral: true,
+					numeralPositiveOnly: positive,
+					prefix: '', 
+					noImmediatePrefix: true,
+					numeralDecimalMark: decimalMark,
+					delimiter: delimiter,
+					numeralDecimalScale: 0
+				});
+			});
+		}
+	};
+
+	function removeDelimiter(inputs) {
+		return function(){
+			inputs.each(function(){
+				this.value = this.value.replace(/[,.]/g,'');
+			});
+		}
+	};
+			
+	function formatBlankToZero(inputs) {
+		inputs.each(function(){
+			if (this.value == ''){
+				this.value = 0;
+			}
+		});
+	};
+
+	function removeOnlyNegativeSign(inputs) {
+		inputs.each(function(){
+			if (this.value == '-'){
+				this.value = '';
+			}
+		});
+	};
+
+	function numberFormatter(inputs, positiveOnly=false, noDelimiter=false, blankToZero=false, calculate){
+		var nextButton = jQuery('#NextButton');
+		var legibleFormatter = formatInputTextGenerator(inputs, positiveOnly, noDelimiter);
+		var numericFormatter = removeDelimiter(inputs);
+
+		if (calculate != null){
+			numericFormatter();
+			calculate();
+		}
+
+		legibleFormatter();
+
+		inputs.keyup(function(){
+			legibleFormatter();
+			if (calculate != null){
+				numericFormatter();
+				calculate();
+				legibleFormatter();
+			}
+			
+			if (jQuery('#NextButton:hover').length != 0) {
+				numericFormatter();
+			}
+		});
+		inputs.focus(legibleFormatter);
+		nextButton.hover(function(){
+			if (blankToZero == true){
+				formatBlankToZero(inputs);
+			}
+			numericFormatter();
+		});
+		nextButton.mouseleave(legibleFormatter);
+		nextButton.click(function(){
+			nextButton.mouseleave(numericFormatter); //Required for firefox
+		});
+	};
+	
+  Qualtrics.SurveyEngine.addOnload(function()
+	{
+		if (jQuery("[id^=Authenticator]").length ==0){
+			languageSelector('${e://Field/Region}','${e://Field/Country}');
+		}
+	});
