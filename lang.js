@@ -57,3 +57,4 @@ function languageSettings(region, country){
 			languageSelector(region, country);
 		}
 	});
+};
