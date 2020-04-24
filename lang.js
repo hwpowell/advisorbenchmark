@@ -47,17 +47,6 @@ function languageSelector(region='US', country='US'){
 	}
 };
 
-function languageSettings(region, country){
-	
-	jQuery(document).ready(function(){
-		if (jQuery("[id^=Authenticator]").length !=0){
-			jQuery(".LanguageSelectorContainer").show();
-		}
-		else {
-			languageSelector(region, country);
-		}
-	});
-};
 
 function translations(language){
 	switch (language){
@@ -120,4 +109,21 @@ function translations(language){
 	};
 	
 	return dict;
+};
+
+
+function languageSettings(region, country){
+	
+	jQuery(document).ready(function(){
+		if (jQuery("[id^=Authenticator]").length !=0){
+			jQuery(".LanguageSelectorContainer").show();
+			var dict = translations(jQuery('#Q_lang').val());
+			jQuery("[id$=0~label]").html(dict[EmailText]);
+			jQuery("[id$=1~label]").html(dict[PasswordText]);
+			
+		}
+		else {
+			languageSelector(region, country);
+		}
+	});
 };
