@@ -1,4 +1,4 @@
-Qualtrics.SurveyEngine.addOnload(function(){
+Qualtrics.SurveyEngine.addOnReady(function(){
 	console.log('${e://Field/Region}');
 	console.log('${e://Field/Country}');
 	
