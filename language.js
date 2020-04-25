@@ -55,17 +55,15 @@ function translations(language){
 				//Core
 				"EmailText" : "E-Mail-Adresse",
 				"PasswordText" : "Passwort",
-				"Location" : "Location",
+				"Location" : "(Stand)Ort",
 				"PostValid" : "Please enter a valid postal code",
-				"PostError" : " is not a valid postal code",
-				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to:",
-				"LostClientsError" : "Lost clients must equal:",
-				//EX and Comp
-				"ExIntroText" : "Update here",
+				"PostError" : "is not a valid postal code",
+				"NewClientsError" : "Bitte geben Sie die folgende minimale Anzahl an Neukunden an",
+				"LostClientsError" : "Anzahl an verlorenen Kunden muss entsprechen",
 				//M&A
-				"Months" : "Months",
+				"Months" : "monate",
 				// All modules
-				"SubmitSurvey" : "SUBMIT SURVEY"
+				"SubmitSurvey" : "FRAGEBOGEN ABSCHICKEN"
 			};
 			break;
 		
@@ -74,17 +72,15 @@ function translations(language){
 				//Core
 				"EmailText" : "E-mailadres",
 				"PasswordText" : "Wachtwoord",
-				"Location" : "Location",
+				"Location" : "Locatie",
 				"PostValid" : "Please enter a valid postal code",
-				"PostError" : " is not a valid postal code",
-				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to:",
-				"LostClientsError" : "Lost clients must equal:",
-				//EX and Comp
-				"ExIntroText" : "Update here",
+				"PostError" : "is not a valid postal code",
+				"NewClientsError" : "Voor nieuwe klanten moet u een getal aangeven dat groter is dan of gelijk is aan",
+				"LostClientsError" : "Het aantal verloren klanten moet gelijk zijn aan",
 				//M&A
-				"Months" : "Months",
+				"Months" : "maanden",
 				// All modules
-				"SubmitSurvey" : "SUBMIT SURVEY"
+				"SubmitSurvey" : "VRAGENLIJST VERZENDEN"
 			};
 			break;
 		
@@ -95,13 +91,11 @@ function translations(language){
 				"PasswordText" : "Password",
 				"Location" : "Location",
 				"PostValid" : "Please enter a valid postal code",
-				"PostError" : " is not a valid postal code",
-				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to:",
-				"LostClientsError" : "Lost clients must equal:",
-				//EX and Comp
-				"ExIntroText" : "This survey requires a password.",
+				"PostError" : "is not a valid postal code",
+				"NewClientsError" : "For new clients, you must indicate a value greater than or equal to",
+				"LostClientsError" : "Lost clients must equal",
 				//M&A
-				"Months" : "Months",
+				"Months" : "months",
 				// All modules
 				"SubmitSurvey" : "SUBMIT SURVEY"
 			};
@@ -109,6 +103,7 @@ function translations(language){
 	};
 	
 	return dict;
+
 };
 
 
