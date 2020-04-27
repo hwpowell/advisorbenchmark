@@ -1,7 +1,10 @@
 function languageSelector(region="US", country="US"){
 
-	Qualtrics.SurveyEngine.setEmbeddedData("Delimiter" ,",");
-	var lang = jQuery("#Q_lang").val();
+	var lang = jQuery("#Q_lang").val();	
+	const countriesWithCommaDecimal = ["BE","CH","DE","DK","FI","LU","NL","NO","SE"];
+	var country = "${e://Field/Country}";
+	
+	Qualtrics.SurveyEngine.setEmbeddedData("Delimiter" ,countriesWithCommaDecimal.indexOf(country) > -1 ? "." : ",");
 	
 	switch (region){
 		case "EU":
@@ -10,7 +13,6 @@ function languageSelector(region="US", country="US"){
 			jQuery("#Q_lang option[value="+"EN-AU"+"]").remove();
 	
 			if (country == "DE"){
-				Qualtrics.SurveyEngine.setEmbeddedData("Delimiter" ,".");
 				if (lang != "EN-GB" && lang != "DE" && lang != "NL"){
 					jQuery("#Q_lang").val("DE");
 				}
