@@ -63,6 +63,8 @@ function translations(language){
 				//M&A
 				"Months" : "monate",
 				// All modules
+				"MM" : "Mio.",
+				"Million": "Mio.",
 				"SubmitSurvey" : "FRAGEBOGEN ABSCHICKEN"
 			};
 			break;
@@ -80,6 +82,8 @@ function translations(language){
 				//M&A
 				"Months" : "maanden",
 				// All modules
+				"MM" : "miljoen",
+				"Million": "miljoen",
 				"SubmitSurvey" : "VRAGENLIJST VERZENDEN"
 			};
 			break;
@@ -97,6 +101,8 @@ function translations(language){
 				//M&A
 				"Months" : "months",
 				// All modules
+				"MM" : "MM",
+				"Million": "million",
 				"SubmitSurvey" : "SUBMIT SURVEY"
 			};
 			break;
