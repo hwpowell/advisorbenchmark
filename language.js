@@ -65,6 +65,7 @@ function translations(language){
 				// All modules
 				"MM" : "Mio.",
 				"Million": "Mio.",
+				"Billion": "Mrd.",
 				"SubmitSurvey" : "FRAGEBOGEN ABSCHICKEN"
 			};
 			break;
@@ -84,6 +85,7 @@ function translations(language){
 				// All modules
 				"MM" : "miljoen",
 				"Million": "miljoen",
+				"Billion": "miljard",
 				"SubmitSurvey" : "VRAGENLIJST VERZENDEN"
 			};
 			break;
@@ -103,6 +105,7 @@ function translations(language){
 				// All modules
 				"MM" : "MM",
 				"Million": "million",
+				"Billion": "billion",
 				"SubmitSurvey" : "SUBMIT SURVEY"
 			};
 			break;
