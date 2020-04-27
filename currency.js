@@ -1,7 +1,10 @@
 function formatInputTextGenerator(inputs, positive=false, noDelimiter=false) {
 	return function(){
-		country = '${e://Field/Country}';
-		if (country == "DE"){
+		const countriesWithCommaDecimal = ["BE","CH","DE","DK","FI","LU","NL","NO","SE"];
+		
+		var country = "${e://Field/Country}";
+		
+		if (countriesWithCommaDecimal.indexOf(country) > -1){
 			delimiter = ".";
 			decimalMark = ",";
 		}
@@ -29,14 +32,14 @@ function formatInputTextGenerator(inputs, positive=false, noDelimiter=false) {
 function removeDelimiter(inputs) {
 	return function(){
 		inputs.each(function(){
-			this.value = this.value.replace(/[,.]/g,'');
+			this.value = this.value.replace(/[,.]/g,"");
 		});
 	}
 };
 			
 function formatBlankToZero(inputs) {
 	inputs.each(function(){
-		if (this.value == ''){
+		if (this.value == ""){
 			this.value = 0;
 		}
 	});
@@ -44,14 +47,14 @@ function formatBlankToZero(inputs) {
 
 function removeOnlyNegativeSign(inputs) {
 	inputs.each(function(){
-		if (this.value == '-'){
-			this.value = '';
+		if (this.value == "-"){
+			this.value = "";
 		}
 	});
 };
 
 function numberFormatter(inputs, positiveOnly=false, noDelimiter=false, blankToZero=false, calculate){
-	var nextButton = jQuery('#NextButton');
+	var nextButton = jQuery("#NextButton");
 	var legibleFormatter = formatInputTextGenerator(inputs, positiveOnly, noDelimiter);
 	var numericFormatter = removeDelimiter(inputs);
 
@@ -70,7 +73,7 @@ function numberFormatter(inputs, positiveOnly=false, noDelimiter=false, blankToZ
 			legibleFormatter();
 		}
 			
-		if (jQuery('#NextButton:hover').length != 0) {
+		if (jQuery("#NextButton:hover").length != 0) {
 			numericFormatter();
 		}
 	});
