@@ -1,8 +1,8 @@
+var country = setCountry();
+
 function formatInputTextGenerator(inputs, positive=false, noDelimiter=false) {
 	return function(){
 		const countriesWithCommaDecimal = ["BE","CH","DE","DK","FI","LU","NL","NO","SE"];
-		
-		var country = "${e://Field/Country}";
 		
 		if (countriesWithCommaDecimal.indexOf(country) > -1){
 			delimiter = ".";
