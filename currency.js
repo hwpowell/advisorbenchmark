@@ -55,6 +55,7 @@ function removeOnlyNegativeSign(inputs) {
 
 function numberFormatter(inputs, positiveOnly=false, noDelimiter=false, blankToZero=false, calculate){
 	var nextButton = jQuery("#NextButton");
+	var prevButton = jQuery("#PreviousButton");
 	var legibleFormatter = formatInputTextGenerator(inputs, positiveOnly, noDelimiter);
 	var numericFormatter = removeDelimiter(inputs);
 
@@ -76,9 +77,13 @@ function numberFormatter(inputs, positiveOnly=false, noDelimiter=false, blankToZ
 		if (jQuery("#NextButton:hover").length != 0) {
 			numericFormatter();
 		}
+		if (jQuery("#PreviousButton:hover").length != 0) {
+			numericFormatter();
+		}
 	});
 	
 	inputs.focus(legibleFormatter);
+	
 	nextButton.hover(function(){
 		if (blankToZero == true){
 			formatBlankToZero(inputs);
@@ -89,4 +94,15 @@ function numberFormatter(inputs, positiveOnly=false, noDelimiter=false, blankToZ
 	nextButton.click(function(){
 		nextButton.mouseleave(numericFormatter); //Required for firefox
 	});
+	
+	prevButton.hover(function(){
+		if (blankToZero == true){
+			formatBlankToZero(inputs);
+		}
+		numericFormatter();
+	});
+	prevButton.mouseleave(legibleFormatter);
+	prevButton.click(function(){
+		prevButton.mouseleave(numericFormatter); //Required for firefox
+	});	
 };
