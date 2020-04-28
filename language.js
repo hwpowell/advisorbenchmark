@@ -4,6 +4,7 @@ function languageSelector(region="US", country="US"){
 	const countriesWithCommaDecimal = ["BE","CH","DE","DK","FI","LU","NL","NO","SE"];
 	
 	Qualtrics.SurveyEngine.setEmbeddedData("Delimiter" ,countriesWithCommaDecimal.indexOf(country) > -1 ? "." : ",");
+	Qualtrics.SurveyEngine.setEmbeddedData("DecimalMark" ,countriesWithCommaDecimal.indexOf(country) > -1 ? "," : ".");
 	
 	switch (region){
 		case "EU":
